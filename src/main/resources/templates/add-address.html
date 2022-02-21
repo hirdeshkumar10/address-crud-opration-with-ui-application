@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>Address crud operation with ui Application</h1>
+</head>
+
+<h1 style="color:red; font-size:30px; background-color:pink;"> Add Detail of Address</h1>
+
+<body style="background-color:pink;">
+
+    <form method="POST" th:action="@{/addresses}" th:object="${address}">
+        <table>
+            <tr th:if="${address.id}">
+                <td>
+                    <label style=" color:blue; font-size:20px;">ID:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text"  th:field="*{id}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">AddressLine1:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="addressLine1" th:field="*{addressLine1}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">AddressLine2:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="addressLine2:" th:field="*{addressLine2}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">City:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="city" th:field="*{city}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">State:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="state" th:field="*{state}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">Country:</label>
+                </td>
+                <td>
+                   <input style="background-color:orange;" type="text" name="country" th:field="*{country}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">zipcode:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="zipcode" th:field="*{zipcode}">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input style="background-color:green;" type="submit" name="save" align="right"> <br>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

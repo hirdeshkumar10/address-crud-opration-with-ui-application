@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body  style="background-color:sky blue;">
+<button><a href="/addresses">Add Address</a></button>
+<table border="10px">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>AddressLine1</th>
+        <th>AddressLine2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Zipcode</th>
+        <th>Action</th>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="address:${addresses}">
+
+        <td th:text="${address.id}"></td>
+        <td th:text="${address.addressLine1}"></td>
+        <td th:text="${address.addressLine2}"></td>
+        <td th:text="${address.city}"></td>
+        <td th:text="${address.state}"></td>
+        <td th:text="${address.country}"></td>
+        <td th:text="${address.zipcode}"></td>
+
+
+        <td>
+            <button>
+                <a th:href="@{/addresses/{id} (id=${address.id})}">Edit</a>
+            </button>
+        </td>
+
+        <td>
+            <button>
+                <a th:href="@{/addresses/delete/{id} (id=${address.id})}">delete</a>
+            </button>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
